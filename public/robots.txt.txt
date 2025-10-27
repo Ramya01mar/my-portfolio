@@ -1,0 +1,16 @@
+# robots.txt for Ramyalakshmi R S Portfolio
+# This file tells search engines which parts of the site can be crawled.
+
+User-agent: *
+Allow: /
+
+# Sitemap helps search engines understand your structure (optional if added later)
+# Sitemap: https://ramyalakshmi.vercel.app/sitemap.xml
+
+# Prevent indexing of build or configuration paths (not needed on public site, but safe)
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /assets/
+
+# Helpful comment:
+# Allow everything else — your portfolio pages, resume, and projects will be indexed.

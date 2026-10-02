@@ -1,20 +1,23 @@
-/* ✅ Import Inter font for premium typography */
+/* ================================
+   Tailwind
+================================ */
 
-
-/* ✅ Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 🌞 Base styling for light mode */
+
+/* ================================
+   Global Theme
+================================ */
+
 :root {
   --color-bg: #fffaf7;
   --color-text: #1a1a1a;
-  --color-accent: #f97316; /* orange-500 */
+  --color-accent: #f97316;
   --color-accent-light: #ffedd5;
 }
 
-/* 🌙 Dark mode styling */
 .dark {
   --color-bg: #0f0f0f;
   --color-text: #f5f5f5;
@@ -22,84 +25,313 @@
   --color-accent-light: #1f2937;
 }
 
-/* 🌐 Global resets */
+
+/* ================================
+   Global Reset
+================================ */
+
 html {
   scroll-behavior: smooth;
-  font-family: "InterVariable", sans-serif;
+  font-family: "Inter", "InterVariable", sans-serif;
   background-color: var(--color-bg);
   color: var(--color-text);
-  font-size: 18px; /* Larger and easier to read */
+  font-size: 17px;
   line-height: 1.6;
 }
 
-/* 🧭 Navbar styling (glass effect) */
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ================================
+   Links
+================================ */
+
+a {
+  text-decoration: none;
+}
+
+a[href^="#"] {
+  scroll-behavior: smooth;
+}
+
+
+/* ================================
+   Navbar
+================================ */
+
 .navbar {
-  @apply fixed top-0 left-0 w-full z-50 backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 border-b border-gray-200 dark:border-gray-700 shadow-sm;
+  @apply fixed top-0 left-0 w-full z-50
+    backdrop-blur-lg
+    bg-white/80
+    dark:bg-gray-900/80
+    border-b
+    border-gray-200
+    dark:border-gray-700
+    shadow-sm;
 }
 
 .nav-item {
-  @apply text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 font-medium transition-colors duration-300;
+  @apply text-gray-700
+    dark:text-gray-300
+    hover:text-orange-600
+    dark:hover:text-orange-400
+    font-medium
+    transition-colors
+    duration-300;
 }
 
-/* 🧍 Hero section */
+
+/* ================================
+   Hero
+================================ */
+
 .hero-title {
-  @apply text-5xl md:text-6xl font-extrabold text-orange-600 mb-4;
+  @apply text-5xl
+    md:text-6xl
+    font-extrabold
+    text-orange-600
+    mb-4;
 }
 
 .hero-subtitle {
-  @apply text-lg md:text-xl text-gray-700 dark:text-gray-300 font-medium mb-6;
+  @apply text-lg
+    md:text-xl
+    text-gray-700
+    dark:text-gray-300
+    font-medium
+    mb-6;
+}
+
+.hero-buttons {
+  @apply flex
+    flex-wrap
+    justify-center
+    gap-4;
 }
 
 .hero-buttons a {
-  @apply px-5 py-2 rounded-lg bg-orange-500 text-white font-semibold shadow-md hover:bg-orange-600 transition-transform duration-300 hover:-translate-y-1;
+  @apply px-6
+    py-3
+    rounded-xl
+    bg-orange-500
+    text-white
+    font-semibold
+    shadow-md
+    hover:bg-orange-600
+    transition-all
+    duration-300
+    hover:-translate-y-1;
 }
 
-/* 🧩 Section styling */
+
+/* ================================
+   Sections
+================================ */
+
 .section {
-  @apply max-w-6xl mx-auto py-16 px-6;
+  @apply max-w-6xl
+    mx-auto
+    py-20
+    px-6;
 }
 
 .section-title {
-  @apply text-3xl md:text-4xl font-semibold text-center mb-10 text-orange-600;
+  @apply text-3xl
+    md:text-4xl
+    font-semibold
+    text-center
+    mb-12
+    text-orange-600;
 }
 
-/* 🧱 Cards */
+
+/* ================================
+   Cards
+================================ */
+
 .card {
-  @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300;
+  @apply bg-white
+    dark:bg-gray-800
+    rounded-2xl
+    shadow-lg
+    p-6
+    border
+    border-orange-100
+    dark:border-gray-700
+    hover:shadow-2xl
+    transition-all
+    duration-300;
+}
+
+.card:hover {
+  transform: translateY(-3px);
 }
 
 .card-title {
-  @apply text-xl font-bold text-orange-700 mb-2;
+  @apply text-xl
+    font-bold
+    text-orange-700
+    mb-2;
 }
 
 .card-text {
-  @apply text-gray-700 dark:text-gray-300 text-base;
+  @apply text-gray-700
+    dark:text-gray-300
+    text-base;
 }
 
-/* 🎥 Video styling */
+
+/* ================================
+   Project Videos
+================================ */
+
 video {
-  @apply w-full rounded-xl mt-4 shadow-md border border-gray-200 dark:border-gray-700;
+  @apply w-full
+    rounded-xl
+    mt-4
+    shadow-md
+    border
+    border-gray-200
+    dark:border-gray-700;
 }
 
-/* 💡 Skills grid */
+iframe {
+  border: none;
+}
+
+
+/* ================================
+   Skills
+================================ */
+
 .skills-grid {
-  @apply grid md:grid-cols-2 gap-6 text-left mt-6;
+  @apply grid
+    md:grid-cols-2
+    gap-6
+    text-left
+    mt-6;
 }
 
 .skills-grid strong {
   @apply text-orange-600;
 }
 
-/* 📱 Footer */
+.skill-tag {
+  @apply inline-block
+    px-3
+    py-2
+    mr-2
+    mb-2
+    rounded-lg
+    bg-orange-50
+    text-gray-700
+    text-sm
+    font-medium
+    border
+    border-orange-100
+    transition-all
+    duration-200;
+}
+
+.skill-tag:hover {
+  @apply bg-orange-100;
+  transform: translateY(-2px);
+}
+
+
+/* ================================
+   Currently Learning
+================================ */
+
+.learning-card {
+  @apply bg-white
+    rounded-2xl
+    shadow-md
+    p-6
+    border
+    border-orange-100
+    transition-all
+    duration-300;
+}
+
+.learning-card:hover {
+  @apply shadow-xl;
+  transform: translateY(-3px);
+}
+
+
+/* ================================
+   Buttons
+================================ */
+
+.primary-button {
+  @apply inline-flex
+    items-center
+    justify-center
+    gap-2
+    px-6
+    py-3
+    rounded-xl
+    bg-orange-600
+    text-white
+    font-semibold
+    shadow-md
+    hover:bg-orange-700
+    transition-all
+    duration-300
+    hover:-translate-y-1;
+}
+
+.secondary-button {
+  @apply inline-flex
+    items-center
+    justify-center
+    gap-2
+    px-6
+    py-3
+    rounded-xl
+    border
+    border-orange-500
+    text-orange-600
+    font-semibold
+    hover:bg-orange-50
+    transition-all
+    duration-300;
+}
+
+
+/* ================================
+   Footer
+================================ */
+
 footer {
-  @apply text-center py-10 bg-orange-600 text-white mt-16;
+  @apply text-center
+    py-12
+    bg-orange-600
+    text-white
+    mt-16;
 }
 
 footer a {
-  @apply underline hover:text-orange-200;
+  @apply hover:text-orange-200
+    transition-colors
+    duration-200;
 }
 
-/* ✨ Utility: Section fade-in animation */
+
+/* ================================
+   Animations
+================================ */
+
 .fade-in {
   animation: fadeInUp 1s ease-out;
 }
@@ -109,23 +341,73 @@ footer a {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* 🧭 Smooth link scrolling */
-a[href^="#"] {
-  scroll-behavior: smooth;
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
-/* 🧠 Responsive typography */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+
+/* ================================
+   Scrollbar
+================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff7ed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fb923c;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f97316;
+}
+
+
+/* ================================
+   Responsive
+================================ */
+
 @media (max-width: 768px) {
+
   html {
     font-size: 16px;
   }
+
   .hero-title {
     @apply text-4xl;
+  }
+
+  .section {
+    @apply py-14 px-5;
+  }
+
+  .section-title {
+    @apply text-3xl mb-8;
   }
 }
